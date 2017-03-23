@@ -20,8 +20,13 @@
       <file leaf-file-name="AsianNotAsian.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AsianNotAsian.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="308">
               <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+=======
+            <state relative-caret-position="374">
+              <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+>>>>>>> 35d91b034c8d5ff26abedeae68d85f2062a56e93
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -149,8 +154,13 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/AsianNotAsian.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="308">
           <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+=======
+        <state relative-caret-position="374">
+          <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+>>>>>>> 35d91b034c8d5ff26abedeae68d85f2062a56e93
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
