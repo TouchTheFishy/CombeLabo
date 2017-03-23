@@ -15,5 +15,5 @@ class AsianNotAsian():
         PWM.stop(" P9_14 ")
         PWM.cleanup()
 
-obj=AsianNotAsian()
+obj=AsianNotAsian(155)
 obj.IsAsian()
