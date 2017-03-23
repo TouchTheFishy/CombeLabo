@@ -1,4 +1,4 @@
-import Adafruit_BBIO . PWM as PWM
+import Adafruit_BBIO.PWM as PWM
 import time
 
 class AsianNotAsian():
@@ -15,3 +15,5 @@ class AsianNotAsian():
         PWM.stop(" P9_14 ")
         PWM.cleanup()
 
+obj=AsianNotAsian()
+obj.IsAsian()
