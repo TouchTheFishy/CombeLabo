@@ -1,15 +1,19 @@
-import Adafruit_BBIO . PWM as PWM
+import Adafruit_BBIO.PWM as PWM
 import time
 
 class AsianNotAsian():
     def __init__(self,input):
         self.input=input
 
+
     def IsAsian(self):
-        PWM.start(" P9_14 ", 0)
+        PWM.start("P9_14", 0)
+        PWM.set_duty_cycle("P9_14", 90)
         for i in range(0, 100):
-            PWM.set_duty_cycle(" P9_14 ", float(i))
-        time.sleep(1)
-        PWM.stop(" P9_14 ")
+            PWM.set_duty_cycle("P9_14", float(i))
+            time.sleep(1)
+        PWM.stop("P9_14")
         PWM.cleanup()
 
+obj=AsianNotAsian(155)
+obj.IsAsian()
