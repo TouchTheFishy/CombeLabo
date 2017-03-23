@@ -4,16 +4,16 @@ import time
 class AsianNotAsian():
     def __init__(self,input):
         self.input=input
-        PWM.start(" P9_14 ", 0)
-        PWM.set_duty_cycle(" P9_14 ", 90)
+        PWM.start("P9_14", 0)
+        PWM.set_duty_cycle("P9_14", 90)
 
     def IsAsian(self):
 
         for i in range(0, 100):
-            PWM.set_duty_cycle(" P9_14 ", float(i))
+            PWM.set_duty_cycle("P9_14", float(i))
             time.sleep(1)
-        PWM.stop(" P9_14 ")
+        PWM.stop("P9_14")
         PWM.cleanup()
 
-obj=AsianNotAsian()
+obj=AsianNotAsian(155)
 obj.IsAsian()
