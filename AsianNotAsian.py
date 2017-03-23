@@ -11,7 +11,7 @@ class AsianNotAsian():
 
         for i in range(0, 100):
             PWM.set_duty_cycle("P9_14", float(i))
-            time.sleep(1)
+            time.sleep(0.1)
         PWM.stop("P9_14")
         PWM.cleanup()
 
