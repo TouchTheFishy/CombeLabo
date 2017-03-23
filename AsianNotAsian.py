@@ -4,7 +4,7 @@ import time
 class AsianNotAsian():
     def __init__(self,input):
         self.input=input
-        PWM.start("P9_14", 90)
+        PWM.start("P9_14", 0)
 
 
     def IsAsian(self):
