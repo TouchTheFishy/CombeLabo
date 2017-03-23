@@ -9,7 +9,7 @@ class AsianNotAsian():
 
     def IsAsian(self):
 
-        PWM.set_duty_cycle("P9_14", 100)
+        PWM.set_duty_cycle("P9_14", 80)
         time.sleep(1)
         PWM.stop("P9_14")
         PWM.cleanup()
