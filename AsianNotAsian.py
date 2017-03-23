@@ -7,12 +7,12 @@ class AsianNotAsian():
 
 
     def IsAsian(self):
-        PWM.start("P8_13", 0)
-        PWM.set_duty_cycle("P8_13", 90)
+        PWM.start("P9_14", 0)
+        PWM.set_duty_cycle("P9_14", 90)
         for i in range(0, 100):
-            PWM.set_duty_cycle("P8_13", float(i))
+            PWM.set_duty_cycle("P9_14", float(i))
             time.sleep(1)
-        PWM.stop("P8_13")
+        PWM.stop("P9_14")
         PWM.cleanup()
 
 obj=AsianNotAsian(155)
