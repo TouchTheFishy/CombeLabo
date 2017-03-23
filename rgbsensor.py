@@ -6,7 +6,7 @@ class RGBSensor():
         self.int_pin = int_pin
 
         with open("/dev/i2c-2", "rb+") as i2c:
-            i2c.write(bytes(self.adress) + bytes(0x00) + bytes(0b00000011))
+            i2c.write(bytes(self.adress << 1 | 1) + bytes(0x00) + bytes(0b00000011))
 
     def get_color():
         with open("/dev/i2c-2", "rb+") as i2c:
