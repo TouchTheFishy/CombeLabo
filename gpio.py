@@ -11,12 +11,7 @@ def GPIO(pin, port):
     """
 
     if not os.path.exists("/sys/class/gpio/export"):
- #       try:
-            Write("/sys/class/gpio/export", str(32 * port + pin))
-            Write("/sys/class/gpio/direction", "out")
-            Write("/sys/class/gpio/value", 1)
-            Write("/sys/class/gpio/unexport", str(32 * port +pin))
-
-#        except ValueError:
- #           print("The port and pin  to respect the suggest values")
-
+        Write("/sys/class/gpio/export", str(32 * port + pin))
+        Write("/sys/class/gpio/direction", "out")
+        Write("/sys/class/gpio/value", 1)
+        Write("/sys/class/gpio/unexport", str(32 * port + pin))
