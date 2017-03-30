@@ -8,7 +8,7 @@ def GPIO(pin, port):
     Chose a port, the port 9 is 1 and the port 8 is 2.
     """
 
-    Write("sys/class/gpio/export", 32 * port + pin)
+    Write("/sys/class/gpio/export", 32 * port + pin)
 # On peut toujours tapper une exception s'il mets un autre port ou une autre pin et n'importe quoi d'autre
 
     Write("/sys/class/gpio/direction", "out")
