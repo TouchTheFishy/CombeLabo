@@ -12,11 +12,11 @@ class Accellerometer():
         ioctl(self.i2c, 0x703, self.adress)
 
     def get_x(self):
-        os.write(self.i2c, bytes(0x00))
+        os.write(self.i2c, bytes([0x00]))
         data = os.read(self.i2c, 2)
-        print(data)
+        return data[0] & (data[1] << 8)
 
 
 if __name__ == '__main__':
     a = Accellerometer()
-    a.get_x()
+    print(a.get_x())
