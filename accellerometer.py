@@ -5,7 +5,7 @@ from fcntl import ioctl
 class Accellerometer():
     """Class abstracting the MMA7455L Accellerometer"""
 
-    def __init__(self, int_pin):
+    def __init__(self):
         self.adress = 0x1D
 
         self.i2c = os.open("/dev/i2c-2", os.O_RDWR)
