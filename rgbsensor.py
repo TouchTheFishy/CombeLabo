@@ -1,4 +1,4 @@
-from os import O_RDWR
+import os
 from fcntl import ioctl
 
 
@@ -9,7 +9,7 @@ class RGBSensor():
         self.adress = 0x29
         self.int_pin = int_pin
 
-        self.i2c = os.open("/dev/i2c-2", O_RDWR)
+        self.i2c = os.open("/dev/i2c-2", os.O_RDWR)
         ioctl(self.i2c, 0x703, self.adress)
 
     def get_color(self):
