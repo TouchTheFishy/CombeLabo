@@ -1,3 +1,5 @@
+import os
+
 def Write(chemin, val1):
     with open(chemin, "w") as f:
         f.write(val1)
@@ -8,10 +10,13 @@ def GPIO(pin, port):
     Chose a port, the port 9 is 1 and the port 8 is 2.
     """
 
-    Write("/sys/class/gpio/export", str(32 * port + pin))
-# On peut toujours tapper une exception s'il mets un autre port ou une autre pin et n'importe quoi d'autre
+    if not os.path.exists("/sys/class/gpio/export"):
+ #       try:
+            Write("/sys/class/gpio/export", str(32 * port + pin))
+            Write("/sys/class/gpio/direction", "out")
+            Write("/sys/class/gpio/value", 1)
+            Write("/sys/class/gpio/unexport", str(32 * port +pin))
 
-    Write("/sys/class/gpio/direction", "out")
-    Write("/sys/class/gpio/value", 1)
-    Write("/sys/class/gpio/unexport", str(32 * port +pin))
+#        except ValueError:
+ #           print("The port and pin  to respect the suggest values")
 
