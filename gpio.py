@@ -10,8 +10,10 @@ def GPIO(pin, port):
     Chose a port, the port 9 is 1 and the port 8 is 2.
     """
 
+    # To check if the pin is already with an information
     if not os.path.exists("/sys/class/gpio/export"):
-        Write("/sys/class/gpio/export", str(32 * port + pin))
-        Write("/sys/class/gpio/direction", "out")
-        Write("/sys/class/gpio/value", 1)
-        Write("/sys/class/gpio/unexport", str(32 * port + pin))
+        #If not, we have to write in 4 register
+        Write("/sys/class/gpio/export", str(32 * port + pin)) #To define wich pin
+        Write("/sys/class/gpio/direction", "out")#To choose between IN/OUT
+        Write("/sys/class/gpio/value", 1)#To active the pin
+        Write("/sys/class/gpio/unexport", str(32 * port + pin))#To liberate the pin
