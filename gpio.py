@@ -1,18 +1,35 @@
 import os
+from enum import Enum
 
-def GPIO(pin, port):
+class Direction(Enum):
+    """docstring for ."""
+    IN = 0
+    OUT = 1
+
+
+class GPIO:
     """
     Chose a pin between 1 and 46
     Chose a port, the port 9 is 1 and the port 8 is 2.
     """
+    def __init__(self, port, pin, direction):
+        self.pin = 32 * port + pin
+        self.direction = "out" if direction == Direction.OUT else "in"
+        self.value = 0
+
+        if not os.path.exists("/sys/class/gpio/export"):
+            __write_gpio("/sys/class/gpio/export", str(self.pin))
+            __write_gpio("/sys/class/gpio/direction", self.direction)
+            __write_gpio("/sys/class/gpio/value", str(self.value))
+            __write_gpio("/sys/class/gpio/unexport", str(self.pin))
+
+    def set(self, value):
+        if not os.path.exists("/sys/class/gpio/export"):
+            __write_gpio("/sys/class/gpio/export", str(self.pin))
+            __write_gpio("/sys/class/gpio/value", str(self.value))
+            __write_gpio("/sys/class/gpio/unexport", str(self.pin))
 
     # Internal function to make code DRY
-    def write_gpio(path, value):
+    def __write_gpio(path, value):
         with open(path, "w") as f:
             f.write(value)
-
-    if not os.path.exists("/sys/class/gpio/export"):
-        write_gpio("/sys/class/gpio/export", str(32 * port + pin))
-        write_gpio("/sys/class/gpio/direction", "out")
-        write_gpio("/sys/class/gpio/value", 1)
-        write_gpio("/sys/class/gpio/unexport", str(32 * port + pin))
