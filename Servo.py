@@ -38,3 +38,14 @@ class Servo():
             i+=1
         PWM.stop(self.__pin)
         PWM.cleanup()
+		
+if __name__ == '__main__':
+    import time
+
+    servo = Servo("P19_14")
+
+    while(1):
+        servo.SetAngle(50)
+		time.sleep(5)
+		servo.SwipeFromAngle(30)
+		
