@@ -46,6 +46,5 @@ if __name__ == '__main__':
 
     while(1):
         servo.SetAngle(50)
-		time.sleep(5)
-		servo.SwipeFromAngle(30)
-		
+        time.sleep(5)
+        servo.SwipeFromAngle(30)
