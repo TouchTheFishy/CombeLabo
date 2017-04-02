@@ -39,3 +39,15 @@ class GPIO:
     def __write_gpio(path, value):
         with open(path, "w") as f:
             f.write(value)
+
+
+if __name__ == '__main__':
+    import time
+
+    led = GPIO(1, 15, Direction.OUT)
+
+    while(1):
+        led.set(1)
+        time.sleep(1)
+        led.set(0)
+        time.sleep(1)
