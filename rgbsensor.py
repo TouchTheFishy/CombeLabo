@@ -1,6 +1,7 @@
 import os
 from fcntl import ioctl
 
+# Sensor does not work, code doesn't either ;)
 
 class RGBSensor():
     """docstring for RGBSensor."""
