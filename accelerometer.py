@@ -1,15 +1,14 @@
 import os
 from fcntl import ioctl
 
-
-class Accellerometer():
+class Accelerometer():
     """
-    Class abstracting the MMA7455L Accellerometer
+    Class abstracting the MMA7455L Accelerometer
     providing methods to retrieve the x, y and z acceleration components
     """
 
     def __init__(self):
-        """initiates the communication on the I2C bus with the accellerometer"""
+        """initiates the communication on the I2C bus with the accelerometer"""
         self.adress = 0x1D
         self.i2c = os.open("/dev/i2c-2", os.O_RDWR)
         ioctl(self.i2c, 0x703, self.adress)
@@ -34,5 +33,5 @@ class Accellerometer():
 
 # Test
 if __name__ == '__main__':
-    a = Accellerometer()
+    a = Accelerometer()
     print(a.get_x())

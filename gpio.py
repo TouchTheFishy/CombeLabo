@@ -14,7 +14,9 @@ class GPIO:
 
     def __init__(self, port, pin, direction):
         """
-        Chose a pin between 1 and 46
+        Go to the page 84 or 86 in the BBB-System-Reference-Manual
+        Choose a pin between 1 and 46 in the left column and give the correspondent number
+        in the right column
         Chose a port, the port 9 is 1 and the port 8 is 2.
         """
         self.pin = 32 * port + pin
