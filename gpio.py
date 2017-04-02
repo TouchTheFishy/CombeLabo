@@ -44,7 +44,7 @@ class GPIO:
 if __name__ == '__main__':
     import time
 
-    led = GPIO(1, 15, Direction.OUT)
+    led = GPIO(1, 48, Direction.OUT)
 
     while(1):
         led.set(1)
