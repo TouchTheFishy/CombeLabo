@@ -30,6 +30,7 @@ class GPIO:
             __write_gpio("/sys/class/gpio/unexport", str(self.pin))
 
     def set(self, value):
+        self.value = value
         if not os.path.exists("/sys/class/gpio/export"):
             __write_gpio("/sys/class/gpio/export", str(self.pin))
             __write_gpio("/sys/class/gpio/value", str(self.value))
